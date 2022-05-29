@@ -37,7 +37,11 @@ public class UnidadMedida implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String categoria;
+	
+	@Column(unique = true)
 	private String nombre;
+	
+	@Column(unique = true)
 	private String abreviatura;
 	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "unidadMedida")

@@ -17,6 +17,8 @@ import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.Min;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -24,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
 @Entity
-@Table(name = "materiales")
+@Table(name = "materiales",  uniqueConstraints = @UniqueConstraint(columnNames = {"nombre", "unidad_medida_id"} ))
 public class Material implements Serializable{
 
 	/**
@@ -38,9 +40,10 @@ public class Material implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id; 
 	
-	@Column(nullable = false)
+	@Column(nullable = false, unique = true)
 	private String nombre;
 	private String descripcion;
+	
 	
 	private Double cantidad;
 	
