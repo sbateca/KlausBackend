@@ -17,6 +17,7 @@ import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.UniqueConstraint;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -24,7 +25,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
 @Entity
-@Table(name = "tallas")
+@Table(name = "tallas", uniqueConstraints = @UniqueConstraint(columnNames = {"tipo_talla_id","talla"})) // la combinación de tipo de talla y nombre de la talla deben ser únicos
 public class Talla implements Serializable{
 
 	private static final long serialVersionUID = 1L;

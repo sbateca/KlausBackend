@@ -41,7 +41,7 @@ public class TallaRestController {
 	 * - Parámetros: ninguno
 	 * - Retorna: Una lista de Tallas 
 	*/
-	
+	@PreAuthorize("hasRole('ADMIN') or hasRole('OPERADOR')")
 	@GetMapping("/tallas")
 	public List<Talla> listarTallas(){
 		return iTallaService.listarTallas();
@@ -55,6 +55,7 @@ public class TallaRestController {
 	 * - Parámetros: el ID
 	 * - Retorna: Un ResponseEntity de tipo genérico 
 	*/
+	@PreAuthorize("hasRole('ADMIN') or hasRole('OPERADOR')")
 	@GetMapping("/tallas/{id}")
 	public ResponseEntity<?> obtenerTallaPorID(@PathVariable Long id) {
 		
@@ -91,7 +92,7 @@ public class TallaRestController {
 	 *	- Parámetros: El paginador (tiene la información de la paginación)
 	 *	- Retorna: un ResponseEntity con la lista paginada 
 	*/
-	
+	@PreAuthorize("hasRole('ADMIN') or hasRole('OPERADOR')")
 	@GetMapping("/tallas/pagina")
 	public ResponseEntity<?> listarTallasPaginado(Pageable paginador){
 		

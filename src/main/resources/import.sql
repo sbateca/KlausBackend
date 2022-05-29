@@ -1151,7 +1151,6 @@ INSERT INTO usuario (nombre, nombre_usuario, correo, password) VALUES ('Sergio B
 
 INSERT INTO usuario_rol (usuario_id, rol_id) VALUES ('1','1');
 INSERT INTO usuario_rol (usuario_id, rol_id) VALUES ('2','1');
-
 INSERT INTO proveedores (nombres, apellidos, nit, documento, numero_contacto, correo_electronico, direccion_residencia) VALUES ('Ramón','Valencia',21345,60300300,301456721,'ramon@proveedor.com','calle 25 No. 25-25');
 INSERT INTO proveedores (nombres, apellidos, nit, documento, numero_contacto, correo_electronico, direccion_residencia) VALUES ('Julio','Ortiz',232324,1094246587,310123456,'julio@proveedor.com','calle 25 No. 25-25');
 INSERT INTO proveedores (nombres, apellidos, nit, documento, numero_contacto, correo_electronico, direccion_residencia) VALUES ('Andrea','Benanidez',13354678,6030300,315458712,'andrea@proveedor.com','calle 25 No. 25-25');

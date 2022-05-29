@@ -52,7 +52,7 @@ public class ProductoRestController extends CommonRestController<Producto, IProd
 	
 	
 		
-	
+	@PreAuthorize("hasRole('ADMIN') or hasRole('OPERADOR')")
 	@GetMapping("/productoFoto/{idProducto}")
 	public ResponseEntity<?> obtenerFotoProductoPorID(@PathVariable Long idProducto){
 		
@@ -93,7 +93,7 @@ public class ProductoRestController extends CommonRestController<Producto, IProd
 	}
 	
 	
-	@PreAuthorize("hasRole('ADMIN') or hasRole('OPERADOR')")
+	//@PreAuthorize("hasRole('ADMIN') or hasRole('OPERADOR')")
 	@PostMapping("/productoFoto")
 	public ResponseEntity<?> guardarProductoConFoto(@Valid Producto producto, @RequestParam MultipartFile archivo ) throws IOException{	
 		
@@ -128,7 +128,7 @@ public class ProductoRestController extends CommonRestController<Producto, IProd
 	}
 	
 	
-	@PreAuthorize("hasRole('ADMIN') or hasRole('OPERADOR')")
+	//@PreAuthorize("hasRole('ADMIN') or hasRole('OPERADOR')")
 	@PutMapping("/{id}")
 	public ResponseEntity<?> modificarProducto(@PathVariable Long id, @RequestBody Producto productoFormulario){
 		

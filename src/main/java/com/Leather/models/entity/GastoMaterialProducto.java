@@ -64,7 +64,7 @@ public class GastoMaterialProducto implements Serializable{
 	private UnidadMedida unidadMedida;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JsonIgnoreProperties(value= {"listaGastoMaterial","gastoMaterialProducto", "hibernateLazyInitializer", "handler"})
+	@JsonIgnoreProperties(value= {"listaGastoMaterial","gastoMaterialProducto", "piezas", "hibernateLazyInitializer", "handler"})
 	private Producto producto;
 	
 	
